@@ -1,0 +1,44 @@
+{% extends 'dashboard/htmls/base.html' %}
+{% load static %}
+
+{% block dashboardPanel %}
+
+    <div class="dashboardSection">
+        <div class="dashboardSectionContainer">
+            <div class="addInvoice">
+                <div class="addInvoiceImage">
+                    <img src="{% static 'dashboard/images/addInvoice.png' %}" alt="addInvoiceImage">
+                </div>
+                <div class="addInvoiceButton">
+                    <a href="{% url 'addInvoice' %}">Add Invoice</a>
+                </div>
+            </div>
+            <div class="addServiceprovider">
+                <div class="addServiceproviderImage">
+                    <img src="{% static 'dashboard/images/serviceProvider.png' %}" alt="addServiceproviderImage">
+                </div>
+                <div class="addServiceproviderButton">
+                    <a href="{% url 'addServiceProviderDetails' %}">Add Service Provider</a>
+                </div>
+            </div>
+            <div class="reviewInvoice">
+                <div class="reviewInvoiceImage">
+                    <img src="{% static 'dashboard/images/reviewInvoice.png' %}" alt="reviewInvoiceImage">
+                </div>
+                <div class="reviewInvoiceButton">
+                    <a href="{% url 'allClientDetails' %}">Review Invoice</a>
+                </div>
+            </div>
+            <div class="invoiceReport">
+                <div class="invoiceReportImage">
+                    <img src="{% static 'dashboard/images/invoiceReport.png' %}" alt="invoiceReportImage">
+                </div>
+                <div class="invoiceReportButton">
+                    <a href="{% url 'invoiceReport' %}">Invoice Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock dashboardPanel %}

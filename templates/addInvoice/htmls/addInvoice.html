@@ -1,0 +1,99 @@
+{% extends 'addInvoice/htmls/base.html' %}
+{% load static %}
+
+{% block addInvoice %}
+
+    <div class="addInvoiceSection">
+        <div class="addInvoiceSectionContainer">
+            <div class="addClientDetails">
+                <div class="addClientDetailsLink">
+                    <a href="{% url 'addInvoice' %}">1st Step - Add Client Details</a>
+                </div>
+                <div class="addClientDetailsForms">
+                    <form action="{% url 'addInvoice' %}" method="post">
+                        {% csrf_token %}
+                        <div class="addClientDetailsCompanyName">
+                            {% comment %} <input type="text" placeholder="Company Name" name="addClientDetailsCompanyName" id="addClientDetailsCompanyName"> {% endcomment %}
+                            <!-- <span>Company Name</span> -->
+                            <p>Company Name</p>
+                            {{clientFm.company_name}}
+                            
+                        </div>
+                        <div class="addClientDetailsGstNumber">
+                            {% comment %} <input type="text" placeholder="Gst Number" name="addClientDetailsGstNumber" id="addClientDetailsGstNumber"> {% endcomment %}
+                            <span>Gst Number</span> <br>
+                            {{clientFm.gst_number}}
+                                                    
+                        </div>
+                        <div class="addClientDetailsCountry">
+                            {% comment %} <input type="text" placeholder="Country" name="addClientDetailsCountry" id="addClientDetailsCountry"> {% endcomment %}
+                            <span>Country</span> <br>
+                            {{clientFm.country}}
+                            
+                        </div>
+                        <div class="addClientDetailsState">
+                            {% comment %} <input type="text" placeholder="State" name="addClientDetailsState" id="addClientDetailsState"> {% endcomment %}
+                            <span>State</span> <br>
+                            {{clientFm.state}}
+                            
+                        </div>
+                        <div class="addClientDetailsAddress">
+                            {% comment %} <input type="text" placeholder="Address" name="addClientDetailsAddress" id="addClientDetailsAddress"> {% endcomment %}
+                            <span>Address</span> <br>
+                            {{clientFm.address}}
+                            
+                        </div>
+                        <div class="addClientDetailsButton">
+                            <button class="addClientDetailsButton1" type="submit">
+                                Save Details
+                            </button>
+                            <button class="addClientDetailsButton2" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="addServies121">
+                <div class="addServiesLink121">
+                    <a href="{% url 'addInvoice2' %}">2nd Step - Add Services</a>
+                </div>
+                {% comment %} <div class="addServiesForms"> {% endcomment %}
+                    {% comment %} <form action="{% url 'addInvoice2' %}" method="post">
+                        {% csrf_token %}
+                        <div class="addServiesClient">
+                            <input type="text" placeholder="Client" name="addServiesClient" id="addServiesClient">
+                            <!-- <span>Client</span> -->
+                        </div>
+                        <div class="addServiesDescription">
+                            <input type="text" placeholder="Description" name="addServiesDescription" id="addServiesDescription">
+                            <!-- <span>Description</span> -->
+                        </div>
+                        <div class="addServiesQuantity">
+                            <input type="text" placeholder="Quantity" name="addServiesQuantity" id="addServiesQuantity">
+                            <!-- <span>Quantity</span> -->
+                        </div>
+                        <div class="addServiesAmount">
+                            <input type="text" placeholder="Amount" name="addServiesAmount" id="addServiesAmount">
+                            <!-- <span>Amount</span> -->
+                        </div>
+                        <!-- <div class="addServiesAddress">
+                            <input type="text" placeholder="Address" name="addClientDetailsAddress" id="addClientDetailsAddress">
+                            <span>Address</span>
+                        </div> -->
+                        <div class="addServiesButton">
+                            <button class="addServiesButton1" type="submit">
+                                Save Details
+                            </button>
+                            <button class="addServiesButton2" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                    </form> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            </div>
+        </div>
+    </div>    
+
+
+{% endblock addInvoice %}

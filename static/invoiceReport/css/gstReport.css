@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    /* background-image: linear-gradient(to right, #141e30, #243b55); */
+    position: relative;
+}
+
+
+/* gst Report Section Strats */
+
+.gstReportContainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+.gstReportHeaderButtons{
+    display: flex;
+    
+}
+.gstReportHeaderButtons a{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    
+}
+.gstReportHeaderButton1 a{
+    background-color: blue;
+    width: 200px;
+    margin-left: 40px;
+}
+.gstReportHeaderButton2 a{
+    
+    background-color: rgb(254, 66, 66);
+    color: black;
+    margin-left: 20px;
+    /* width: 100px; */
+}
+
+.companyLogoDetails{
+    margin: 80px 60px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.companyLogoImage img{
+    width: 100px;
+    height: 100px;
+}
+.companyLogoInvoice span{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.companyDetails{
+    margin-right: 50px;
+}
+.businessName{
+    font-size: 30px;
+    font-weight: 600;
+}
+.companyDetailsInfo{
+    display: flex;
+    flex-direction: column;
+    left: 0;
+}
+.companyDetailsInfo div span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.invoiceNumberClientAddress{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px;
+    margin-top: 30px;
+    
+}
+.invoiceNumberDetails{
+    border: 1px solid black;
+    width: 900px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
+}
+.clientAdressDetails{
+    border: 1px solid black;
+    width: 900px;
+    height: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
+}
+.invoiceNumberDetailsField{
+    font-size: 20px;
+    margin: 30px;
+    margin-left: 40px;
+    
+}
+.invoiceNumberDetailsField span{
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* gst Report Section Ends */

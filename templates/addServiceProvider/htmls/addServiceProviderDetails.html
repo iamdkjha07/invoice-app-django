@@ -1,0 +1,156 @@
+{% extends 'addServiceProvider/htmls/base.html' %}
+{% load static %}
+
+{% block addServiceProvider %}
+
+    <div class="addServiceProviderSection">
+        <div class="addServiceProviderSectionContainer">
+            <div class="addServiceProviderDetails">
+                <div class="addServiceProviderDetailsLink">
+                    <a href="">3rd Step - Add Service Provider Details</a>
+                </div>
+                <div class="addServiceProviderDetailsForms">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="addServiceProviderDetailsClient">
+                            <p>Client</p>
+                            {{fm.client}}
+                            <!-- <input type="text" placeholder="Client" name="addServiceProviderDetailsClient" id="addServiceProviderDetailsClient"> -->
+                            <!-- <span>Company Name</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsCompanyName">
+                            <p>Company Name</p>
+                            {{fm.company_name}}
+                            <!-- <input type="text" placeholder="Company Name" name="addServiceProviderDetailsCompanyName" id="addServiceProviderDetailsCompanyName"> -->
+                            <!-- <span>Gst Number</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsHandleBy">
+                            <p>Handle By</p>
+                            {{fm.handle_by}}
+                            <!-- <input type="text" placeholder="Handle By" name="addServiceProviderDetailsHandleBy" id="addServiceProviderDetailsHandleBy"> -->
+                            <!-- <span>Country</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsEmailId">
+                            <p>Email Id</p>
+                            {{fm.email}}
+                            <!-- <input type="text" placeholder="Email Id" name="addServiceProviderDetailsEmailId" id="addServiceProviderDetailsEmailId"> -->
+                            <!-- <span>State</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsPhoneNumber">
+                            <p>Phone Number</p>
+                            {{fm.phone}}
+                            <!-- <input type="text" placeholder="Phone Number" name="addServiceProviderDetailsPhoneNumber" id="addServiceProviderDetailsPhoneNumber"> -->
+                            <!-- <span>Address</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsAccountNumber">
+                            <p>Account Number</p>
+                            {{fm.account_number}}
+                            <!-- <input type="text" placeholder="Account Number" name="addServiceProviderDetailsAccountNumber" id="addServiceProviderDetailsAccountNumber"> -->
+                            <!-- <span>Gst Number</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsIfscCode">
+                            <p>Ifsc Code</p>
+                            {{fm.ifsc_code}}
+                            <!-- <input type="text" placeholder="Ifsc Code" name="addServiceProviderDetailsIfscCode" id="addServiceProviderDetailsIfscCode"> -->
+                            <!-- <span>Country</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsBankName">
+                            <p>Bank Name</p>
+                            {{fm.bank_name}}
+                            <!-- <input type="text" placeholder="Bank Name" name="addServiceProviderDetailsBankName" id="addServiceProviderDetailsBankName"> -->
+                            <!-- <span>State</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsGstNumber">
+                            <p>GST Number</p>
+                            {{fm.gst_number}}
+                            <!-- <input type="text" placeholder="GST Number" name="addServiceProviderDetailsGstNumber" id="addServiceProviderDetailsGstNumber"> -->
+                            <!-- <span>Address</span> -->
+                        </div>
+                        <div class="addServiceProviderDetailsButton">
+                            <button class="addServiceProviderDetailsButton1" type="submit">
+                                Save Details
+                            </button>
+                            <button class="addServiceProviderDetailsButton2" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="allServiceProvider">
+                <div class="allServiceProviderLink">
+                    <a href="">All Service Provider</a>
+                </div>
+                <div class="allServiceProviderForms">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Handle By</th>
+                                <th>Phone Number</th>
+                                <th>Client</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>       
+                        <tbody>
+                            {% for provider in providers %}
+                            <tr>
+                                <div class="horizotalLine"></div>
+                                <td>{{ provider.company_name }}</td>
+                                <td>{{ provider.handle_by }}</td>
+                                <td>{{ provider.phone }}</td>
+                                <td>{{ provider.client }}</td>
+                                <td>
+                                    <div class="allServiceProviderTable">
+                                        <div class="allServiceProviderTableEdit">
+                                            <a href="/">Edit</a>
+                                        </div>
+                                        <div class="allServiceProviderTableDelete">
+                                            <a href="/">Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% comment %} <form action="{% url 'addInvoice2' %}" method="post">
+                        {% csrf_token %}
+                        <div class="addServiesClient">
+                            <input type="text" placeholder="Client" name="addServiesClient" id="addServiesClient">
+                            <!-- <span>Client</span> -->
+                        </div>
+                        <div class="addServiesDescription">
+                            <input type="text" placeholder="Description" name="addServiesDescription" id="addServiesDescription">
+                            <!-- <span>Description</span> -->
+                        </div>
+                        <div class="addServiesQuantity">
+                            <input type="text" placeholder="Quantity" name="addServiesQuantity" id="addServiesQuantity">
+                            <!-- <span>Quantity</span> -->
+                        </div>
+                        <div class="addServiesAmount">
+                            <input type="text" placeholder="Amount" name="addServiesAmount" id="addServiesAmount">
+                            <!-- <span>Amount</span> -->
+                        </div>
+                        <!-- <div class="addServiesAddress">
+                            <input type="text" placeholder="Address" name="addClientDetailsAddress" id="addClientDetailsAddress">
+                            <span>Address</span>
+                        </div> -->
+                        <div class="allServiceProviderButton">
+                            <button class="allServiceProviderButton1" type="submit">
+                                Save Details
+                            </button>
+                            <button class="allServiceProviderButton2" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                    </form> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+{% endblock addServiceProvider %}

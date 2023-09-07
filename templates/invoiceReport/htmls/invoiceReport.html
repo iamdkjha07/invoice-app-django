@@ -1,0 +1,57 @@
+{% extends 'invoiceReport/htmls/base.html' %}
+{% load static %}
+
+{% block invoiceReportBlock %}
+
+
+<div class="addServiceProviderSection">
+    <div class="addServiceProviderSectionContainer">
+        <div class="allServiceProvider">
+            <div class="allServiceProviderLink">
+                <p>All Invoice Report</p>
+            </div>
+            <div class="allServiceProviderForms">
+        
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>GST Number</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>Address</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>       
+                    <tbody>
+                        {% for provider in allclients %}
+                        <tr>
+                            <td>{{ provider.company_name }}</td>
+                            <td>{{ provider.gst_number }}</td>
+                            <td>{{ provider.country }}</td>
+                            <td>{{ provider.state }}</td>
+                            <td>{{ provider.address }}</td>
+                            <td>{{ provider.created_at }}</td>
+                            <td>
+                                <div class="allServiceProviderTable">
+                                    <div class="allServiceProviderTableShow">
+                                        <a href="{% url 'gstReport' provider.id %}">GST Report</a>
+                                    </div>
+                                    <div class="allServiceProviderTableEdit">
+                                        <a href="/">Normal Report</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock invoiceReportBlock %}

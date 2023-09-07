@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titles}}</title>
+    <link rel="stylesheet" href="{% static 'invoiceReport/css/gstReport.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    
+
+    
+    <div class="gstReportContainer">
+        <div class="gstReportHeaderButtons">
+            <div class="gstReportHeaderButton1">
+                <a href="">DOWNLOAD PDF</a>
+            </div>
+            <div class="gstReportHeaderButton2">
+                <a href="{% url 'invoiceReport' %}">GO BACK</a>
+            </div>
+        </div>
+        <div class="companyLogoDetails">
+            <div class="companyLogo">
+                <div class="companyLogoImage">
+                    <img src="{% static 'invoiceReport/images/netcoreLogo.png' %}" alt="Logo">
+                </div>
+                <div class="companyLogoInvoice">
+                    <span>
+                        INVOICE
+                    </span>
+                </div>
+            </div>
+            <div class="companyDetails">
+                <div class="companyDetailsInfo">
+                    <div class="businessName">Netcoreinfo Business Group</div>
+                    <div><span>Contact: </span> +91-9267952538, +91-9953045521</div>
+                    <div><span>Website: </span> <a href="">www.netcoreinfo.com</a></div>
+                    <div><span>Email: </span> corporate@netcoreinfo.com</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="invoiceNumberClientAddress">
+            <div class="invoiceNumberDetails">
+                <div>
+                    #Invoice No - INV4
+                </div>
+                <div class="invoiceNumberDetailsField">
+                    <div>
+                        <span>Dated: </span>
+                    </div>
+                    <div>
+                        <span>
+                            Customer GST Number: 
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Company Name: 
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            Handle By: 
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clientAdressDetails">
+                <div>
+                    CLIENT ADDRESS
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    <script src="{% static 'invoiceReport/js/index.js' %}"></script>
+</body>
+</html>

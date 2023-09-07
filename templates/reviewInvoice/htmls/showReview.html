@@ -1,0 +1,172 @@
+{% extends 'reviewInvoice/htmls/base.html' %}
+{% load static %}
+
+{% block showReview %}
+
+
+<div class="showReviewSection">
+    <div class="showReviewSectionContainer">
+        <div class="showReview">
+            <div class="showReviewLink">
+                <p>Selected Client Details</p>
+            </div>
+        </div>
+    </div>
+    <div class="showReviewTwoBoxContainer">
+        <div class="showReviewClientDetails">
+            <div class="showReviewClientDetailsHeading">
+                <p>Client Details</p>
+            </div>
+            <div class="showReviewClientDetailsTable">
+                <table>
+                    <!-- <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead> -->
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <td>{{clientData.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>Comppany Name</th>
+                            <td>{{clientData.company_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>GST Number</th>
+                            <td>{{clientData.gst_number}}</td>
+                        </tr>           
+                        <tr>
+                            <th>Country</th>
+                            <td>{{clientData.country}}</td>
+                        </tr>
+                        <tr>
+                            <th>State</th>
+                            <td>{{clientData.state}}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{clientData.address}}</td>
+                        </tr>           
+                        <tr>
+                            <th>Created At</th>
+                            <td>{{clientData.created_at}}</td>
+                        </tr>   
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="showReviewServiceProviderDetails">
+            <div class="showReviewServiceProviderDetailsHeading">
+                <p>Service Provider Details</p>
+            </div>
+            {% if companyData.key %}
+            <div class="showReviewClientDetailsInfo">
+                <p>Service Provider details not available, Please insert details first.</p>
+            </div>
+            {% else %}
+            <div class="showReviewClientDetailsTable">
+                <table>
+                    
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <td>{{companyData.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>Comppany Name</th>
+                            <td>{{companyData.company_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Handle By</th>
+                            <td>{{companyData.handle_by}}</td>
+                        </tr>           
+                        <tr>
+                            <th>Bank Name</th>
+                            <td>{{companyData.bank_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Account Number</th>
+                            <td>{{companyData.account_number}}</td>
+                        </tr>
+                        <tr>
+                            <th>IFSC Code</th>
+                            <td>{{companyData.ifsc_code}}</td>
+                        </tr>
+                        <tr>
+                            <th>GST Number</th>
+                            <td>{{companyData.gst_number}}</td>
+                        </tr>           
+                        <tr>
+                            <th>Created At</th>
+                            <td>{{companyData.created_at}}</td>
+                        </tr>   
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="showReviewAllServicesContainer">
+        <div class="showReviewAllServices">
+            <div class="showReviewAllServicesLink">
+                <p>All Services Details</p>
+            </div>
+            {% if companyData.key %}
+            <div class="showReviewAllServicesInfo">
+                <p>No Service provided yet, Please insert Services first.</p>
+            </div>
+            {% else %}
+            <div class="showReviewAllServicesTable">
+                <table>
+                    <thead>
+                        <th>Description</th>
+                        <th>Qunatity</th>
+                        <th>Amount</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        {% for obj in servicesData %}
+                        <tr>
+                            <td>{{obj.description}}</td>
+                            <td>{{obj.quantity}}</td>
+                            <td>{{obj.amount}}</td>
+                            <td>{{obj.created_at}}</td>
+                            <td>
+                                <div class="allServiceProviderTable">
+                                    <div class="allServiceProviderTableEdit">
+                                        <a href="/">Edit</a>
+                                    </div>
+                                    <div class="allServiceProviderTableDelete">
+                                        <a href="/">Delete
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock showReview %}

@@ -1,0 +1,70 @@
+{% extends 'authentication/htmls/base.html' %}
+
+{% load static %}
+
+
+
+{% block loginPage %}
+
+<div class="loginPageSection">
+    <div class="loginPageContainer">
+        <div class="loginPageSectionBox">
+            <div class="loginPageTitle">
+                Invoice
+            </div>
+            <div class="loginPageSubTitle">
+                <div class="loginPageSubTitle1">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing!
+                </div>
+                <div class="loginPageSubTitle2">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing!
+                </div>
+                <div class="loginPageSubTitle3">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing!
+                </div>
+            </div>
+        </div>
+        <div class="loginPageSectionForm">
+            <form action="{% url 'loginPage' %}" method="post">
+                {% csrf_token %}
+                <div class="loginUsername">
+                    <!-- <input type="text" name='username' placeholder="username" required> -->
+                    <!-- <span>Username:</span> -->
+                    {{loginForm.username}}
+                </div>
+                <div class="loginPassword">
+                    <!-- <span>Password:</span> -->
+                    <!-- <input type="password" name="password" placeholder="password" required> -->
+                    {{loginForm.password}}
+                </div>
+                <div class="loginSubmitButton">
+                        <button type="submit">
+                            Log In
+                        </button>
+                </div>
+                <div class="forgottenPassword">
+                    <div class="forgottenPasswordLink">
+                        <a href="/">Forgotten password ?</a>
+                    </div>
+                </div>
+                <div class="loginPageHorizontalLine">
+                    <div class="loginPageHorizontalLine1">
+                        <hr>
+                    </div>
+                </div>
+                <div class="createNewAccount">
+                    <div class="createNewAccountBox">
+                        <a href="{% url 'signupPage' %}">
+                            <p>Create New Account</p>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock loginPage %}
